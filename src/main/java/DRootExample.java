@@ -27,13 +27,13 @@
  * => 2
  */
 public class DRootExample {
-    public static int digital_root(int n) {
+    public static int digitalRoot(int n) {
         int root = n;
         int sum = 0;
         while (root > 9) {
-            while(n != 0){
+            while (n != 0) {
                 sum += (n % 10);
-                n/=10;
+                n /= 10;
             }
             root = sum;
             n = sum;
