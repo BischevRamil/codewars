@@ -30,11 +30,16 @@ public class BraceChecker {
                 stack.push(braces.charAt(i));
             }
             if (braces.charAt(i) == closeBracket || braces.charAt(i) == closeCurly || braces.charAt(i) == closePrntsis) {
-                if (isEquals(stack.peek(), braces.charAt(i))) {
-                    stack.pop();
-                } else {
+                try {
+                    if (isEquals(stack.peek(), braces.charAt(i))) {
+                        stack.pop();
+                    } else {
+                        return false;
+                    }
+                } catch (EmptyStackException e) {
                     return false;
                 }
+
             }
         }
         return stack.empty();

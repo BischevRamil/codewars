@@ -12,6 +12,6 @@ public class BraceCheckerTest {
 
     @Test
     public void testInvalid() {
-        assertEquals(false, checker.isValid("]]]"));
+        assertEquals(false, checker.isValid("[[[]]]]"));
     }
 }
